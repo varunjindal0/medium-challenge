@@ -125,11 +125,6 @@ min-height: 100vh;
     padding-left: 20px
 }
 
-/* When you mouse over the navigation links, change their color */
-.sidenav a:hover {
-    color: #f1f1f1;
-}
-
 .myForm{
   display: flex;
   flex-direction: column;

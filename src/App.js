@@ -28,12 +28,12 @@ class LeftOptionsSide extends Component {
       <div>
         <h2 style={{marginTop: '10px', paddingBottom: '20px', marginBottom: '0px' , paddingLeft: '20px', borderBottom: '1px solid lightgrey'}} >Giselle</h2>
         <div id="mySidenav" style={{marginTop: '0px'}} className="leftOptionsArea sidenav">
-          <a href="javascript:void(0)" style={{backgroundColor: 'account'==this.state.selectedOptionId?'lightgrey':'white'}} id='account' onClick={(e)=>this.trialFunction(e)}>ACCOUNT</a>
-          <a href="#" id='career' style={{backgroundColor: 'career'==this.state.selectedOptionId?'lightgrey':'white'}} onClick={(e)=>this.trialFunction(e)}>Career</a>
-          <a href="#" id='personal' style={{backgroundColor: 'personal'==this.state.selectedOptionId?'lightgrey':'white'}} onClick={(e)=>this.trialFunction(e)}>Personal</a>
-          <a href="#" id='manage' style={{backgroundColor: 'manage'==this.state.selectedOptionId?'lightgrey':'white'}} onClick={(e)=>this.trialFunction(e)}>MANAGE</a>
-          <a href="#" id='password' style={{backgroundColor: 'password'==this.state.selectedOptionId?'lightgrey':'white'}} onClick={(e)=>this.trialFunction(e)}>Password</a>
-          <a href="#" id='emailOption' style={{backgroundColor: 'emailOption'==this.state.selectedOptionId?'lightgrey':'white'}} onClick={(e)=>this.trialFunction(e)}>Email</a>
+          <a href="javascript:void(0)" style={{backgroundColor: 'account'==this.state.selectedOptionId?'lightgrey':'white', color: 'account'==this.state.selectedOptionId?'black':'#818181'}} id='account' onClick={(e)=>this.trialFunction(e)}>ACCOUNT</a>
+          <a href="#" id='career' style={{backgroundColor: 'career'==this.state.selectedOptionId?'lightgrey':'white', color: 'career'==this.state.selectedOptionId?'black':'#818181'}} onClick={(e)=>this.trialFunction(e)}>Career</a>
+          <a href="#" id='personal' style={{backgroundColor: 'personal'==this.state.selectedOptionId?'lightgrey':'white', color: 'personal'==this.state.selectedOptionId?'black':'#818181'}} onClick={(e)=>this.trialFunction(e)}>Personal</a>
+          <a href="#" id='manage' style={{backgroundColor: 'manage'==this.state.selectedOptionId?'lightgrey':'white', color: 'manage'==this.state.selectedOptionId?'black':'#818181'}} onClick={(e)=>this.trialFunction(e)}>MANAGE</a>
+          <a href="#" id='password' style={{backgroundColor: 'password'==this.state.selectedOptionId?'lightgrey':'white', color: 'password'==this.state.selectedOptionId?'black':'#818181'}} onClick={(e)=>this.trialFunction(e)}>Password</a>
+          <a href="#" id='emailOption' style={{backgroundColor: 'emailOption'==this.state.selectedOptionId?'lightgrey':'white', color: 'emailOption'==this.state.selectedOptionId?'black':'#818181'}} onClick={(e)=>this.trialFunction(e)}>Email</a>
         </div>
       </div>    
       )
