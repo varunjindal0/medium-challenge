@@ -1,0 +1,183 @@
+.App {
+  display: flex;
+  flex-direction: column;
+/*  text-align: center;
+*/
+min-height: 100vh;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.button{
+  height: 40px;
+  width: 40px;
+  margin: 10px;
+  border-radius: 50%;
+  outline: none;
+
+}
+
+.container{
+  display: flex;
+  flex: 20;
+}
+
+.leftSide{
+  flex: 5;
+  border-right: 1px solid lightgrey;
+}
+
+.middleSide{
+  flex: 24;
+/*  background-color: lightblue;
+*/}
+
+.rightSide{
+  flex: 30;
+}
+
+.outerMostContainerForRightSide{
+  display: flex;
+  flex-direction: column;
+  min-height: 100%
+}
+
+.upperPortionContainer{
+  display: flex;
+  border-bottom: 1px solid lightgrey;
+}
+
+.upperPortion{
+  display: flex;
+  flex: 5;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 60px;
+}
+
+.upperPortionSide{
+  flex: 1;
+}
+
+.lowerPortionContainer{
+  display: flex;
+  flex: 5;
+}
+
+.lowerPortion{
+  display: flex;
+  flex: 5;
+  justify-content: center;
+  flex-direction: center;
+}
+
+.lowerPortionSide{
+  flex: 1;
+}
+
+.upperBar{
+  display: flex;
+/*  background-color: lightyellow;
+*/  /*justify-content: space-between;*/
+}
+
+.leftOptionsArea{
+  display: flex;
+  flex-direction: column;
+}
+
+
+.sidenav a {
+    text-decoration: none;
+    /*font-size: 25px;*/
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+    padding: 10px;
+    padding-left: 20px
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.myForm{
+  display: flex;
+  flex-direction: column;
+}
+
+.myForm input {
+  border-width: 0px;
+  outline: none;
+  border: none;
+/*border-color: transparent;
+*/
+  border-bottom: 1px solid lightgrey;
+  padding-bottom: 10px;
+  font-size: 15px;
+  margin-bottom: 10px;
+/*  width: 100%;
+*/}
+
+.hidden{
+  visibility: hidden;
+}
+
+.fadeColor{
+  color: lightgrey;
+}
+
+.react-select-container{
+  background-color: blue ;
+}
+
+.myClass{
+  border: none;
+  background-color: blue;
+}
+
+.mainForm{
+  display: flex;
+  flex: 7;
+  flex-direction: column;
+  margin-top: 50px
+}
+
+.upperBarUserDiv{
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+
+
