@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Dropdown from 'react-dropdown'
 import 'react-dropdown/style.css'
-import {FaArrowRight } from 'react-icons/fa';
+import {FaArrowRight, FaArrowLeft } from 'react-icons/fa';
 
 
 class LeftOptionsSide extends Component {
@@ -39,7 +39,12 @@ class LeftOptionsSide extends Component {
       )
     }else {
       // ....Nothing
-      return <div></div>
+      return (
+        <div className='sideBarCloseLeftSide'>
+          <div style={{flex: '1', borderBottom: '1px solid lightgrey'}}></div>
+          <div style={{flex: '3'}}></div>
+        </div>
+        )
     }
     
   }
@@ -53,8 +58,8 @@ class UpperBar extends Component {
   render(){
     return (
         <div className="upperBar">
-            <div style={{flex: 1, borderRight: '1px solid lightgrey'}} >
-              <button className="button" style={{backgroundColor: 'red', marginLeft: '20px', marginRight: '47px'}} onClick={this.props.onSideBarControllerClick}><FaArrowRight color='white' /></button>
+            <div style={{flex: 1, borderRight: this.props.isOpen?'1px solid lightgrey':null}} >
+              <button className="button" style={{backgroundColor: this.props.isOpen?'red':'white', border: 'none', marginLeft: '20px', marginRight: '47px'}} onClick={this.props.onSideBarControllerClick}>{this.props.isOpen?<FaArrowRight color='white' />:<FaArrowLeft />}</button>
             </div>
             <div style={{flex: 5}}></div>
             <div className='upperBarUserDiv'>
@@ -279,25 +284,48 @@ class App extends Component {
   }
 
   render() {
-    // if(this.state.sideBarOpen){
+     if(this.state.sideBarOpen){
       return (
       <div className="App">
         <UpperBar isOpen={this.state.sideBarOpen} onSideBarControllerClick={this.onSideBarControllerClick}/>
         <div className="container">
-          <div className="leftSide"><LeftOptionsSide handleOptionSelect={this.handleOptionSelect} isOpen={this.state.sideBarOpen} onSideBarControllerClick={this.onSideBarControllerClick} /></div>
+          <div className="leftSide" style={{borderRight: this.state.sideBarOpen?'1px solid lightgrey':null}}><LeftOptionsSide handleOptionSelect={this.handleOptionSelect} isOpen={this.state.sideBarOpen} onSideBarControllerClick={this.onSideBarControllerClick} /></div>
           <div className="rightSide"><RightUserArea contentIdSelected={this.state.contentIdSelected} isOpen={this.state.sideBarOpen} onSideBarControllerClick={this.onSideBarControllerClick}/></div>
         </div>
       </div>
       );
 
-    // }else {
-    //   return (
-    //     <div className="App">
-    //       <UpperBar isOpen={this.state.sideBarOpen} onSideBarControllerClick={this.onSideBarControllerClick}/>
-    //       <RightUserArea isOpen={this.state.sideBarOpen} onSideBarControllerClick={this.onSideBarControllerClick}/>
-    //     </div>
-    //   )
-    // }
+    }else {
+      var contentIdSelected = this.state.contentIdSelected;
+      var elemToRender = null;
+      if(contentIdSelected==='personal'){
+        elemToRender = <MyPersonalForm />
+      }else if(contentIdSelected==='emailOption'){
+        elemToRender = <MyEmailForm />
+      }else {
+        elemToRender = contentIdSelected;
+      }
+      return (
+      <div className="App">
+        <UpperBar isOpen={this.state.sideBarOpen} onSideBarControllerClick={this.onSideBarControllerClick}/>
+        <div className='sideBarCloseContainer' >
+          <div style={{borderBottom: '1px solid lightgrey', paddingBottom: '60px'}} >
+            <div>
+              <h1 style={{textAlign: 'center'}}>Your account</h1>
+              <div style={{fontSize: '13px', textAlign: 'center'}}>Tell us little more about youself</div>
+            </div>
+          </div>
+          <div className='sideBarCloseLowerPortion'>
+              <div style={{flex: '12.66'}}></div>
+              <div className="mainForm">
+                {elemToRender}
+              </div>
+              <div style={{flex: '12.66'}}></div>
+          </div>
+        </div>
+      </div>
+      )
+    }
     
   }
 }
